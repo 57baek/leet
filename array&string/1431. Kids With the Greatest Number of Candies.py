@@ -16,7 +16,6 @@ class Solution:
     
         return result 
 
-
 # %%
 
 solution = Solution()
@@ -27,7 +26,6 @@ extraCandies = 3
 result = solution.kidsWithCandies(candies, extraCandies)
 print(result)
 
-
 # %%
 
 from typing import List
@@ -35,4 +33,3 @@ from typing import List
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         return [True if (c + extraCandies) >= max(candies) else False for c in candies]
-        
