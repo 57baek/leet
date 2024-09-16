@@ -48,3 +48,5 @@ class Solution:
 
         # If strings are equal than return the substring from 0 to gcd of size(str1), size(str2)
         return str1[:gcd(len(str1), len(str2))]
+
+# end
