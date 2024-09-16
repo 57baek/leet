@@ -25,7 +25,6 @@ class Solution:
         # return str1 index 0 to l1
         return str1[:l1]    
             
-            
 # %%
 
 solution = Solution()
@@ -35,7 +34,6 @@ str2 = "ABABABAB"
 
 result = solution.gcdOfStrings(str1, str2)
 print(result)
-
 
 # %%
 
