@@ -40,3 +40,5 @@ class Solution(object):
                 result.append(word2[i])
             i += 1
         return ''.join(result)
+
+# end
