@@ -12,8 +12,8 @@ class Solution:
         
         while left_index < right_index:
             # Move the left pointer until we find a vowel
-            # in 
             '''
+            # in 
         	•	Set: Best choice for large collections because it offers constant-time lookup (O(1)).
         	•	List/Tuple: Slower for large collections, but can still be used if performance is not a concern.
         	•	String: Works well when you're just checking characters, but less efficient than a set if you're doing frequent checks.
