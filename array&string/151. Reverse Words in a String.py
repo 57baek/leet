@@ -44,9 +44,11 @@ class Solution(object):
         :rtype: str
         """
         # Split the string into words
+        # "   a    black    connor   " -> ['a','black','connor']
         words = s.split()
         
         # Reverse the list of words
+        # Uses slicing ([::-1]) to reverse the list of words.
         reversed_words = words[::-1]
         
         # Join the reversed words with spaces
