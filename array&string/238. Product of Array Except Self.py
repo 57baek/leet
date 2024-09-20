@@ -35,6 +35,12 @@ class Solution:
         postfix_product = 1
         result = [0] * len(nums)  # Initialize the result array with zeros
 
+        '''
+        [A, B, C, D]
+        For the element at i = 1 (say B), we need to multiply prefix A and postfix C * D
+        We are setting prefixes using the first loop and multiply postfixes using the second loop
+        '''
+
         # First pass: compute prefix product for each element
         for i in range(len(nums)):
             result[i] = prefix_product   # At index i, store the product of all elements before i
