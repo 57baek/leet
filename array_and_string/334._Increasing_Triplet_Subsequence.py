@@ -6,14 +6,19 @@ from typing import List
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
 
-        for index in range(len(nums) - 1, -1, -1):
+        if len(nums) < 3:
+            return False
 
-            for sub_index in range(index, -1, -1):
-                if nums[sub_index] < nums[index]:
+        # Two variables, first and second, are initialized to positive infinity (float('inf'))
+        first = second = float("inf")
 
-                    for sub_sub_index in range(sub_index, -1, -1):
-                        if nums[sub_sub_index] < nums[sub_index]:
-                            return True
+        for num in nums:
+            if num <= first:
+                first = num  # Update the smallest so far
+            elif num <= second:
+                second = num  # Update the second smallest so far
+            else:
+                return True  # We found a number larger than both
 
         return False
 
