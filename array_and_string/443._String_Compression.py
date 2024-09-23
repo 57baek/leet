@@ -48,6 +48,10 @@
     •	The number of iterations isn’t known in advance (e.g., depends on conditions during execution).
     •	You need to manually control the index or the loop’s condition.
     •	Complex logic, such as skipping or revisiting elements, is needed.
+    •	When another condition is required to run the loop
+
+In this case, where we have to move index to specific point (a,a,a,b,b) 
+-> after processing the group of a, we have to jump to the next group of b: use while loop
 """
 
 
