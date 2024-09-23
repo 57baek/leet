@@ -39,6 +39,18 @@
 #         return len(s)
 
 
+"""
+•	Use a for loop when:
+    •	You have a clear, predefined sequence or range to iterate over.
+    •	Each element needs to be processed once in a straightforward way.
+    •	No complex control of the index is required.
+•	Use a while loop when:
+    •	The number of iterations isn’t known in advance (e.g., depends on conditions during execution).
+    •	You need to manually control the index or the loop’s condition.
+    •	Complex logic, such as skipping or revisiting elements, is needed.
+"""
+
+
 # %%
 
 from typing import List
