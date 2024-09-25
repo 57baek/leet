@@ -74,7 +74,8 @@ class Solution:
             count = 0
 
             # another loop until different letter shows up
-            # come back to the original index when new letter shows up
+            # we are moving the main index
+            # we jump to the end of the same group, to the next letter that is different
             while i < len(chars) and chars[i] == letter:
                 count += 1
                 i += 1
@@ -96,6 +97,6 @@ class Solution:
 
 # %%
 sol = Solution()
-chars = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]
+chars = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]
 result = sol.compress(chars)
 print(result)
