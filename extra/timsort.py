@@ -4,9 +4,9 @@ from typing import List
 
 
 class timSort:
-    
-    def insertionSort(self, nums:List[int], left: int, right: int) -> None:
-        
+
+    def insertionSort(self, nums: List[int], left: int, right: int) -> None:
+
         for i in range(left + 1, right + 1):
 
             key = nums[i]
@@ -18,8 +18,9 @@ class timSort:
 
             nums[j + 1] = key
 
-
-    def mergeSort(self, nums:List[int], runIndex: int, leftEndIndex: int, rightEndIndex: int) -> None:
+    def mergeSort(
+        self, nums: List[int], runIndex: int, leftEndIndex: int, rightEndIndex: int
+    ) -> None:
 
         leftSize = leftEndIndex - runIndex + 1
         rightSize = rightEndIndex - leftEndIndex
@@ -51,9 +52,7 @@ class timSort:
             j += 1
             k += 1
 
-
-
-    def timSort(self, nums:List[int]) -> List[int]:
+    def timSort(self, nums: List[int]) -> List[int]:
 
         runSize = 4
         n = len(nums)
@@ -78,14 +77,10 @@ class timSort:
         return nums
 
 
-
 nums = [5, 21, 7, 23, 19, 2, 15, 10]
 timsort = timSort()
 sorted_nums = timsort.timSort(nums)
 print(sorted_nums)
-
-
-
 
 
 from typing import List
@@ -103,14 +98,16 @@ class Timsort:
                 j -= 1
             nums[j + 1] = key
 
-    def merge(self, nums: List[int], left_index: int, left_run_end: int, right_run_end: int) -> None:
+    def merge(
+        self, nums: List[int], left_index: int, left_run_end: int, right_run_end: int
+    ) -> None:
         # Merge two sorted sublists nums[left_index:left_run_end + 1] and nums[left_run_end + 1:right_run_end + 1]
         left_size = left_run_end - left_index + 1
         right_size = right_run_end - left_run_end
-        
+
         # Create temporary arrays for the left and right runs
-        left_array = nums[left_index:left_run_end + 1]
-        right_array = nums[left_run_end + 1:right_run_end + 1]
+        left_array = nums[left_index : left_run_end + 1]
+        right_array = nums[left_run_end + 1 : right_run_end + 1]
 
         # Merge the temporary arrays back into the original list
         i, j, k = 0, 0, left_index
@@ -148,22 +145,31 @@ class Timsort:
 
         # Step 2: Merge the sorted runs
         current_run_size = min_run_size  # Initialize the size of runs to merge
-        while current_run_size < n:       # Continue merging until the current run size exceeds the length of the list
-            
+        while (
+            current_run_size < n
+        ):  # Continue merging until the current run size exceeds the length of the list
+
             # Iterate through the list in chunks of current_run_size * 2
             # (4, 4) (4, 4) -> (8,8) -> (16)
-            for left_index in range(0, n, current_run_size * 2):  
-                left_run_end = min(left_index + current_run_size - 1, n - 1)  # Determine the end index of the left run
-                right_run_end = min(left_index + current_run_size * 2 - 1, n - 1)  # Determine the end index of the right run
+            for left_index in range(0, n, current_run_size * 2):
+                left_run_end = min(
+                    left_index + current_run_size - 1, n - 1
+                )  # Determine the end index of the left run
+                right_run_end = min(
+                    left_index + current_run_size * 2 - 1, n - 1
+                )  # Determine the end index of the right run
 
                 # Only merge if there is a valid right run by comparing the index
                 # at the end, both left and right index will give the same number - which we should not merge
                 if left_run_end < right_run_end:
-                    self.merge(nums, left_index, left_run_end, right_run_end)  # Merge the two sorted runs
+                    self.merge(
+                        nums, left_index, left_run_end, right_run_end
+                    )  # Merge the two sorted runs
 
-            current_run_size *= 2  # Double the size of the runs for the next iteration 
+            current_run_size *= 2  # Double the size of the runs for the next iteration
 
         return nums
+
 
 # Example usage:
 nums = [5, 21, 7, 23, 19, 2, 15, 10]
