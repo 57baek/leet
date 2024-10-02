@@ -16,6 +16,7 @@
 	•	When k becomes negative (i.e., we have flipped more than k zeroes), 
     •	we shrink the window from the left until the number of zeroes flipped is again within the allowed limit (i.e., k >= 0).
 	•	This is done by moving the left pointer (l), and if we pass over a 0, we “unflip” it by incrementing k.
+    •   When nums[left] == 0, it means that 0, which was part of the subarray, is no longer part of it and thus we can increase the k.
 
 """
 
