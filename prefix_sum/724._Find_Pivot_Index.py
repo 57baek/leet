@@ -5,6 +5,7 @@ from typing import List
 
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+
         l = 0
         r = sum(nums)
 
