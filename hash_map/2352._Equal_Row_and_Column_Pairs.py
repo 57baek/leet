@@ -11,6 +11,7 @@ class Solution:
 
         for i in range(n):
             row = grid[i]
+
             for j in range(n):
 
                 # map(function, iterable) is a built-in Python function that applies a given function (function) to each item in an iterable (like a list, tuple, etc.) and returns an iterator.
@@ -57,6 +58,7 @@ sorted_data = sorted(data, key=lambda x: x[1])  # [(5, 0), (3, 1), (1, 2)]
 class Solution:
 
     def equalPairs(self, grid: List[List[int]]) -> int:
+
         res = 0
         n = len(grid)
 
@@ -70,24 +72,3 @@ class Solution:
                     res += 1
 
         return res
-
-
-# %%
-class Solution:
-    def equalPairs(self, grid: List[List[int]]) -> int:
-
-        m = defaultdict(int)
-        cnt = 0
-
-        for row in grid:
-            m[str(row)] += 1
-
-        for i in range(len(grid[0])):
-            col = []
-
-            for j in range(len(grid)):
-                col.append(grid[j][i])
-
-            cnt += m[str(col)]
-
-        return cnt
