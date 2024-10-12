@@ -63,9 +63,17 @@ class Solution:
         n = len(grid)
 
         for i in range(n):
+            # grid[i] is the i-th row of the grid, which is a list of integers.
+            # map(str, grid[i]): This applies the str() function to each element in the row to convert the integers to strings.
+            # ",".join(...): Joins the string representations of the elements with a comma (,) separator.
+            #                This converts the row into a comma-separated string.
+            # If grid[i] = [1, 2, 3], this line will turn it into the string "1,2,3".
             row = ",".join(map(str, grid[i]))
 
             for j in range(n):
+                # grid[k][j] accesses the element in the k-th row and j-th column.
+                # This is a generator expression that goes through each row k in the grid and selects the element in the j-th column (grid[k][j]).
+                # If j = 1, the ",".join(str(grid[k][j]) for k in range(n)) expression will generate: "2,7,7"
                 col = ",".join(str(grid[k][j]) for k in range(n))
 
                 if col == row:
