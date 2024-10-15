@@ -21,8 +21,6 @@ print(sol.removeStars(s))
 
 
 # %%
-
-
 class Solution:
     def removeStars(self, s: str) -> str:
         stack = []
