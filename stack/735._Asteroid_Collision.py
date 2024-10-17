@@ -33,6 +33,7 @@ asteroids = [-5, -2, 2, 5]
 sol = Solution()
 print(sol.asteroidCollision(asteroids))
 
+
 # %%
 
 
